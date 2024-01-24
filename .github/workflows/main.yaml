@@ -1,5 +1,5 @@
 name: example-wf
-on: [push]
+on: [push,workflow_dispatch]
 
 jobs:
   print-something-to-logs:
@@ -14,4 +14,4 @@ jobs:
     steps:
       - run: echo "This is my workflow!"
       - run: echo "This is another step."
-      - run apt update
+      - run: this is an
