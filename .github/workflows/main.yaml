@@ -1,0 +1,8 @@
+name: example-wf
+on: [push]
+
+jobs:
+  print-something-to-logs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is my workflow!"
