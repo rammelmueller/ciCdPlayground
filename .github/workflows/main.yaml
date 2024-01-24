@@ -6,3 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "This is my workflow!"
+      - run: echo "This is another step."
