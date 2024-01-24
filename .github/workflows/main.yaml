@@ -14,4 +14,4 @@ jobs:
     steps:
       - run: echo "This is my workflow!"
       - run: echo "This is another step."
-      - run: apt update
+      - run apt update
