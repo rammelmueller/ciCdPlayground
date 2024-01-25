@@ -13,7 +13,7 @@ jobs:
         run: yarn
 
       - name: Build.
-        run: yarn buld
+        run: yarn build
 
       - name: Execute unit tests.
         run: yarn test
