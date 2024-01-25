@@ -1,5 +1,5 @@
 name: example-wf
-on: [push,workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
   print-something-to-logs:
