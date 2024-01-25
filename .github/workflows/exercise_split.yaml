@@ -31,10 +31,6 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        browser: [ chrome ]
-
     steps:
       - uses: actions/checkout@v3
 
@@ -52,8 +48,6 @@ jobs:
 
       - name: E2E Tests.
         run: yarn test:e2e
-        env:
-          CYPRESS_OPTS: '--browser=${{ matrix.browser }}'
 
       - name: Collect test reports.
         uses: EnricoMi/publish-unit-test-result-action@v1
