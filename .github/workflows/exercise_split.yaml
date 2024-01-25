@@ -1,4 +1,4 @@
-name: exercise
+name: exercise-split
 on: [push, workflow_dispatch]
 
 jobs:
@@ -37,6 +37,9 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     needs: build
+    strategy:
+      matrix:
+        browser: [ chrome ]
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies.
@@ -47,7 +50,7 @@ jobs:
           path: public
       - name: Execute e2e tests.
         env:
-          CYPRESS_OPTS: '--browser=chrome'
+          CYPRESS_OPTS: '--browser=${{ matrix.browser }}'
         run: yarn test:e2e
       - uses: dorny/test-reporter@v1
         if: success() || failure()
