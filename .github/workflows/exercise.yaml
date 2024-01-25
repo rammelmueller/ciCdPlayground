@@ -26,6 +26,8 @@ jobs:
           reporter: jest-junit
 
       - name: Execute e2e tests.
+        env:
+          CYPRESS_OPTS: '--browser=chrome'
         run: yarn test:e2e
 
       - uses: dorny/test-reporter@v1
