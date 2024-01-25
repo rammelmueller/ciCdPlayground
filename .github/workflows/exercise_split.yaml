@@ -1,9 +1,11 @@
 name: exercise-split
+on: [push, workflow_dispatch]
+
 permissions:
   id-token: write
   contents: read
   checks: write
-on: [push, workflow_dispatch]
+  pull-requests: write
 
 jobs:
 
@@ -60,14 +62,13 @@ jobs:
           name: build
           path: public
 
-      - name: E2E Tests
+      - name: E2E Tests.
         run: yarn test:e2e
-        env:
-          CYPRESS_OPTS: '--browser=${{ matrix.browser }}'
+        # env:
+        #   CYPRESS_OPTS: '--browser=${{ matrix.browser }}'
 
-      - uses: dorny/test-reporter@v1
-        if: success() || failure()
+      - name: Collect test reports.
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
         with:
-          name: E2E Tests
-          path: 'reports/cypress-*.xml'
-          reporter: jest-junit
+          files: 'reports/*.xml'
