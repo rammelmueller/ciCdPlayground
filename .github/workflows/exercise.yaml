@@ -1,46 +1,4 @@
-# name: exercise
-# on: [push, workflow_dispatch]
-
-# jobs:
-
-#   everything-all-at-once:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: actions/checkout@v3
-
-#       - name: Install dependencies.
-#         run: yarn
-
-#       - name: Build.
-#         run: yarn build
-
-#       - name: Execute unit tests.
-#         run: yarn test
-
-#       - uses: dorny/test-reporter@v1
-#         if: success() || failure()
-#         with:
-#           name: Unit Tests
-#           path: 'reports/jest-*.xml'
-#           reporter: jest-junit
-
-#       - name: Execute e2e tests.
-#         env:
-#           CYPRESS_OPTS: '--browser=chrome'
-#         run: yarn test:e2e
-
-#       - uses: dorny/test-reporter@v1
-#         if: success() || failure()
-#         with:
-#           name: E2E Tests
-#           path: 'reports/cypress-*.xml'
-#           reporter: jest-junit
-
-
-
-
-name: CI
+name: CI - exercise
 
 on: [push, pull_request, workflow_dispatch]
 
@@ -58,14 +16,19 @@ jobs:
     # It is not clear which versions these are, 
     # so it might be a good idea to specify them via an action like actions/setup-node@v4
     - uses: actions/checkout@v2
+    
     - name: Install
       run: yarn
+    
     - name: Unit tests
       run: yarn test
+    
     - name: Build
       run: yarn build
+    
     - name: Integration tests
       run: yarn test:e2e
+
     - name: Collect test reports
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
