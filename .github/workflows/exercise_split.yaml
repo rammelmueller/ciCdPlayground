@@ -1,5 +1,5 @@
 name: exercise-split
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 
 permissions:
   id-token: write
