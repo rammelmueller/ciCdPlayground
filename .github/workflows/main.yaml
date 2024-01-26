@@ -7,9 +7,3 @@ jobs:
     steps:
       - run: echo "This is my workflow!"
       - run: echo "This is another step."
-
-      - uses: actions/checkout@v4
-      - name: Greet someone!
-        uses: ./.github/workflows/actions/simple-action
-        with:
-            who-to-greet: 'Lukas'
