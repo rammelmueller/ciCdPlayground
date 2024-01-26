@@ -11,7 +11,7 @@ pipeline {
   stages {
       stage('checkout') {
           steps {
-              git branch 'main', url 'https://github.com/cjhappTNG/ciCdPlayground'
+              git branch: 'main', url: 'https://github.com/cjhappTNG/ciCdPlayground'
       script {
           currentBuild.displayName = 'displayName'
           currentBuild.description = "${params.Version}"
