@@ -9,6 +9,6 @@ jobs:
       - run: echo "This is another step."
       - uses: actions/checkout@v4
       - name: Greet someone!
-        uses: actions/simple-action@v1
+        uses: ./.github/actions/simple-action@v1
         with:
             who-to-greet: 'Lukas'
