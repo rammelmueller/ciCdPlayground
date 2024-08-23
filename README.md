@@ -1,4 +1,4 @@
-# The playground
+# The playground - test
 This is intended to be a minimal project for a CI/CD workshop.
 It consists of a simple JavaScript project, some unit and integration tests, and example configuration for some CI/CD tools.
 
