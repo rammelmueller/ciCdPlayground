@@ -44,7 +44,7 @@ jobs:
       - name: Build.
         run: yarn build
       
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3.9.1
         with:
           name: build
           path: public
