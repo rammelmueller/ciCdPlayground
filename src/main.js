@@ -20,9 +20,9 @@ new App({
 		],
 		// What do you like to do when you're not coding?
 		hobbies: [
-			'play chess', 
-			'do skydiving', 
-			'do my taxes'
+			'cook / eat', 
+			'be on/near a mountain', 
+			'travel'
 		]
 	}
 });
