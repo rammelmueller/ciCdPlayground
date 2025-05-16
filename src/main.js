@@ -10,13 +10,13 @@ new App({
 		
 		// What do you associate with the term 'CI/CD'?
 		associations: [
-			'Ehm, what?'
+			'A lot of work ;)'
 		],
 		// Which CI/CD tools do you use in your project?
-		tools: 'Jenkins, maybe?',
+		tools: 'Formerly Jenkins, GitLab, GitHub, FluxCD, ArgoCD, Tekton, ...',
 		// What do you want to learn in this workshop? 
 		expectations: [
-			'what you are talking about'
+			'Cloud CI systems!'
 		],
 		// What do you like to do when you're not coding?
 		hobbies: [
